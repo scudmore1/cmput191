@@ -8,21 +8,41 @@ To effectively analyze the concept of purchasing power parity, we conducted an e
 For our analysis, we deployed a 14-step process to get from raw data to insights:
 
 ### step 1: scrape data on fresh bread pricing from Numbeo
-This involved web scraping our data usinng requests.get, BeautifulSoup, find, as well as the scrape_table variable to pull necessary data. We found the latest pricing on fresh bread at a standardized unit of 500 grams.
+This involved web scraping our data using requests.get, BeautifulSoup, find, as well as the scrape_table variable to pull necessary data. We found the latest pricing on fresh bread at a standardized unit of 500 grams.
 
 ### step 2: data cleaning
 Data cleaning involved using the sort function (to organize our list of countries) and the take & np.arange functions together to pull 10 countries from the list. This list included a list of developed and developing countries. 
 
 ### step 3: scrape country codes from CurrencyScoop
-This also involved web scraping our data usinng requests.get, BeautifulSoup, find, as well as the scrape_table variable to pull necessary data. 
+This also involved web scraping our data using requests.get, BeautifulSoup, find, as well as the scrape_table variable to pull necessary data. 
 
 ### step 4: display currencies on each country
 Using our exchange rate data collected for our list of countries on 2024/11/29, we put the exchange rates and the currency code for each country into a dictionary that we could use to build into our dataset. Then we used the apply and lambda functions to iterate through our data and divide the raw price by the exchange rate to get the Local Price. Additionally, we combined the apply and lambda functions again to get add a column into our table that showed the currency code for each country. We did this step to show the local prices of fresh bread since the dataset already had converted it into CAD.
 
 ### step 5: diplaying the data using a bar chart
-First, we imported our CAD-converted pricing data into an array, then calculated the price differential compared to Canada using the loc and values functions to select Canada's row and take the first value in the index. Next, we  created a new column that contained data for the price differences (CAD price in each respective country - CAD price for Canada) to get a spread of values showing how much more/less they charge. After this, we used the plt.bar function to display the values. 
+First, we imported our CAD-converted pricing data into an array, then calculated the price differential compared to Canada using the loc and values functions to select Canada's row and take the first value in the index. Next, we  created a new column that contained data for the price differences (CAD price in each respective country - CAD price for Canada) to get a spread of values showing how much more/less they charge. After this, we used the plt.bar function to display the values. As demonstrated below, Switzerland, USA, and Denmark had the largest positive differentials comparatively, while Sweden had the least relative to Canada. Also, Canada sat near the bottom of our dataset, demonstrating very cheap pricing compared to peers.
 
 ![image](https://github.com/user-attachments/assets/b4474c24-0baa-4457-9808-ac51f50268e3)
+
+### step 6: importing data on an external factor
+Similar to the above datasets, we employed requests.get, BeautifulSoup, find, as well as the scrape_table variable to pull necessary data. We pulled our data from IndexMundi on national imports of wheat products globally as a proxy for bargaining power for fresh bread. To clean this data, we dropped columns that contained error messages, using the drop function, and selected only the 10 desired countries from our original dataset using the isin function which referenced an array with the countries we wanted.
+
+### step 7: importing more data since EU imports were bulked together
+To get import data on all the countries we needed, we also web scraped data from the World Bank's website, specifically for Denmark, Luxembourg, Austria, and Sweden. We added this into our table using the concat function.
+
+### step 8: data cleaning our new table 
+Before joining this data into our existing table with exchange rates, we used the strip function (to check for any extra white spaces in the data) and used an if statement to verify that each country name matched that of the other table. 
+
+### step 9: add the price differential table into this table which has the exchange rate and imports data
+Next, we used the merge function to build in our price differentials data to this combined dataset, which now contains all the necessary information we need.
+
+![image](https://github.com/user-attachments/assets/baa05547-86ca-4c46-93d3-c09418b1403e)
+
+### step 10: compare data on price differential to imports through bar charts
+Now to visually compare our external factor we built two bar charts for our data. Off the bat, we noticed that imports did not seem to match up with pricing...
+
+![image](https://github.com/user-attachments/assets/43bb81c1-ddec-40f2-80e6-81873efac02e) ![image](https://github.com/user-attachments/assets/b071bc72-8d41-4580-95cd-8da538dfef57)
+
 
 ## External Factor Analysis
 
