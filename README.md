@@ -38,16 +38,32 @@ Next, we used the merge function to build in our price differentials data to thi
 
 ![image](https://github.com/user-attachments/assets/baa05547-86ca-4c46-93d3-c09418b1403e)
 
-### step 10: compare data on price differential to imports through bar charts
-Now to visually compare our external factor we built two bar charts for our data. Off the bat, we noticed that imports did not seem to match up with pricing...
-
-![image](https://github.com/user-attachments/assets/43bb81c1-ddec-40f2-80e6-81873efac02e) ![image](https://github.com/user-attachments/assets/b071bc72-8d41-4580-95cd-8da538dfef57)
-
 
 ## External Factor Analysis
 
 To effectively analyze the price differential between fresh bread prices across the world,
 we elected to use national imports of fresh bread as our external factor due to the material effect of supply on the price of the commodity. While we considered the potential impact of population size differentials, the size of the country’s financial sector (as an indicator of economic development), and the impact of transportation costs for our external factor, we selected national imports due to the strong influence of global trade movements on commodity prices. Within our hypothesis, we expected that the largest national importers of fresh bread would be able to access the product at a lower cost, and in theory, should have a lower price compared to peer countries.
+
+### step 10: compare data on price differential to imports through bar charts
+Now to visually compare our external factor we built two bar charts for our data. Off the bat, we noticed that imports did not seem to match up with pricing...
+
+![image](https://github.com/user-attachments/assets/43bb81c1-ddec-40f2-80e6-81873efac02e) ![image](https://github.com/user-attachments/assets/b071bc72-8d41-4580-95cd-8da538dfef57)
+
+### step 11: analyzing wheat prices directly to see relationship with wheat imports
+First we took the current wheat price from Business Insider on 2024/11/29 at 8:52PM MT, then we took the USD exchange rates from exchange-rates.org; using the rates we collected, we assigned them to an array containing our selected countries and made a new table that matched each country with their respective exchange rates.
+
+### step 12: getting exchange rates for CAD from the Bank of Canada
+To compare wheat prices with pricing in local currency, we similarly pulled exchange rate data from the Bank of Canada and added it to our table. To get wheat import cost estimates, we multiplied the cost of wheat in CAD/MT by the amount of wheat imports in thousands of MT. 
+
+### step 13: creating a scatter plot with fresh bread prices and wheat import costs
+We plotted the CAD pricing of fresh bread against the wheat import costs in CAD
+
+![image](https://github.com/user-attachments/assets/b981b7d3-8ede-4d13-92e1-24b2264bad77)
+![image](https://github.com/user-attachments/assets/cceab1b6-7ea5-43bd-b70d-0230b5ec812f)
+
+### step 14: calculate the correlation and p-value
+Using the correlation and p-value pre-built variables, we calculated a correlation of 0.307 and a p-value of 0.387
+
 
 ## Concluding Analysis
 
