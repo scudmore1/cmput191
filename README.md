@@ -1,4 +1,4 @@
-### Data Analysis of Global Fresh Bread Prices - Haley, Simon, & Tomas
+# Data Analysis of Global Fresh Bread Prices - Haley, Simon, & Tomas
 CMPUT 191 (FALL 2024) - Assignment 3
 
 ## Synopsis
@@ -7,17 +7,22 @@ To effectively analyze the concept of purchasing power parity, we conducted an e
 
 For our analysis, we deployed a 14-step process to get from raw data to insights:
 
-# step 1: scrape data on fresh bread pricing from Numbeo
+### step 1: scrape data on fresh bread pricing from Numbeo
 This involved web scraping our data usinng requests.get, BeautifulSoup, find, as well as the scrape_table variable to pull necessary data. We found the latest pricing on fresh bread at a standardized unit of 500 grams.
 
-# step 2: data cleaning
+### step 2: data cleaning
 Data cleaning involved using the sort function (to organize our list of countries) and the take & np.arange functions together to pull 10 countries from the list. This list included a list of developed and developing countries. 
 
-# step 3: scrape country codes from CurrencyScoop
+### step 3: scrape country codes from CurrencyScoop
 This also involved web scraping our data usinng requests.get, BeautifulSoup, find, as well as the scrape_table variable to pull necessary data. 
 
-# step 4: display currencies on each country
-Using our exchange rate data collected for our list of countries on 2024/11/29, we calculated 
+### step 4: display currencies on each country
+Using our exchange rate data collected for our list of countries on 2024/11/29, we put the exchange rates and the currency code for each country into a dictionary that we could use to build into our dataset. Then we used the apply and lambda functions to iterate through our data and divide the raw price by the exchange rate to get the Local Price. Additionally, we combined the apply and lambda functions again to get add a column into our table that showed the currency code for each country. We did this step to show the local prices of fresh bread since the dataset already had converted it into CAD.
+
+### step 5: diplaying the data using a bar chart
+First, we imported our CAD-converted pricing data into an array, then calculated the price differential compared to Canada using the loc and values functions to select Canada's row and take the first value in the index. Next, we  created a new column that contained data for the price differences (CAD price in each respective country - CAD price for Canada) to get a spread of values showing how much more/less they charge. After this, we used the plt.bar function to display the values. 
+
+![image](https://github.com/user-attachments/assets/b4474c24-0baa-4457-9808-ac51f50268e3)
 
 ## External Factor Analysis
 
