@@ -3,15 +3,21 @@ CMPUT 191 (FALL 2024) - Assignment 3
 
 ## Synopsis
 
-To effectively analyze the concept of purchasing power parity, we conducted an extensive analysis of fresh bread prices worldwide. During the product selection process, we aimed to choose a product near the origin of the food production process with high liquidity to isolate additional processing costs and market inefficiencies. As a result, we landed on fresh bread (500 grams) for our analysis and used the top ten most expensive countries across the globe to compare pricing for our index.
+To effectively analyze the concept of purchasing power parity, we conducted an extensive analysis of fresh bread prices worldwide. During the product selection process, we aimed to choose a product near the origin of the food production process with high liquidity to isolate additional processing costs and market inefficiencies. As a result, we landed on fresh bread (500 grams) for our analysis and used the a mix of developed and developing countries in our dataset.
 
-## Comments on Code
+For our analysis, we deployed a 14-step process to get from raw data to insights:
 
-Throughout our notebook, individual comments were made to provide additional color on the step-by-step process used to execute each function and calculation.
+# step 1: scrape data on fresh bread pricing from Numbeo
+This involved web scraping our data usinng requests.get, BeautifulSoup, find, as well as the scrape_table variable to pull necessary data. We found the latest pricing on fresh bread at a standardized unit of 500 grams.
 
-## Graphics and visuals
+# step 2: data cleaning
+Data cleaning involved using the sort function (to organize our list of countries) and the take & np.arange functions together to pull 10 countries from the list. This list included a list of developed and developing countries. 
 
-Graphics are included in our analysis and are contained within the GitHub webpage
+# step 3: scrape country codes from CurrencyScoop
+This also involved web scraping our data usinng requests.get, BeautifulSoup, find, as well as the scrape_table variable to pull necessary data. 
+
+# step 4: display currencies on each country
+Using our exchange rate data collected for our list of countries on 2024/11/29, we calculated 
 
 ## External Factor Analysis
 
