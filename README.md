@@ -1,5 +1,6 @@
 # Data Analysis of Global Fresh Bread Prices - Haley, Simon, & Tomas
 CMPUT 191 (FALL 2024) - Assignment 3
+Haley Lacza (lacza), Tomas Tang (xt3), and Simon Cudmore (scudmore)
 https://github.com/scudmore1/cmput191.git
 
 ## Synopsis
