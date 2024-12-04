@@ -1,5 +1,5 @@
-# cmput191
-Assignment 3
+### Data Analysis of Global Fresh Bread Prices - Haley, Simon, & Tomas
+CMPUT 191 (FALL 2024) - Assignment 3
 
 ## Synopsis
 
